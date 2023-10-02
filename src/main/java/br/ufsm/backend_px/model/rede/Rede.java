@@ -1,23 +1,21 @@
-package br.ufsm.backend_px.model.linguagem;
+package br.ufsm.backend_px.model.rede;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Entity
-@Table(name = "linguagem")
-@Getter
+@Entity(name = "Rede")
+@Table(name = "rede")
 @Setter
+@Getter
 @NoArgsConstructor
 @AllArgsConstructor
-
-public class Linguagem {
+public class Rede {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @NotBlank
-    private String nome;
+    private Long UsuarioId;
+    private  Long SeguidorId;
 }
