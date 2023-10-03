@@ -25,7 +25,7 @@ public interface LinguagemService {
         return this.repository.findAll();
     }
 
-    public List<TipoLinguagemDTO> listarTiposLinguagens(int idLinguagem){
+    public List<TipoLinguagemDTO> listarTipoLinguagens(int idLinguagem){
         return this.repository.findTipoLinguagensByLinguagem(idLinguagem);
     }
 }
