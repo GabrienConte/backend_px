@@ -8,7 +8,7 @@ import org.springframework.data.repository.query.Param;
 import java.util.List;
 
 public interface LinguagemRepository extends JpaRepository<Linguagem, Long> {
-    @Query(value = "SELECT a.id  as id, a.nome as nome" +
-            " FROM alunos a where a.idlinguagem =:id", nativeQuery = true)
+    @Query(value = "SELECT tl.id  as id, tl.nome as nome" +
+            " FROM tipoLinguagem tl where tl.idlinguagem =:id", nativeQuery = true)
     List<TipoLinguagemDTO> findTipoLinguagensByLinguagem(@Param("id") int id);
 }
