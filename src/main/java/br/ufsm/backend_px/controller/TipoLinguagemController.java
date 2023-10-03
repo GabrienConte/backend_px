@@ -15,7 +15,6 @@ import java.util.List;
 @RestController
 @RequestMapping("/tipoLinguagem")
 public class TipoLinguagemController {
-}
     private final TipoLinguagemService service;
     public TipoLinguagemController(TipoLinguagemService service){
         this.service = service;
@@ -34,10 +33,7 @@ public class TipoLinguagemController {
     public ResponseEntity salvar(@RequestBody @Valid TipoLinguagem tipoLinguagem, UriComponentsBuilder uriBuilder){
 
         this.service.salvar(tipoLinguagem);
-        //monta a URI da aplicação dinamicamente
         URI uri = uriBuilder.path("/tipoLinguagem/{id}").buildAndExpand(tipoLinguagem.getId()).toUri();
-        //created(uri) irá colocar no cabeçalho da requisição da resposta
-        // o parâmetro Location com a URI de acesso ao recurso criado
         return ResponseEntity.created(uri).body(tipoLinguagem);
     }
 
@@ -47,12 +43,6 @@ public class TipoLinguagemController {
         return ResponseEntity.ok(this.service.listar());
     }
 
-
-    /*
-     ATUALIZAR DEVE DEVOLVER O RECURSO ATUALIZADO
-     Mas não é boa prática devolver a entidade JPA no controler;
-
-    * */
 @PutMapping
 @Transactional
 public ResponseEntity atualizar(@RequestBody TipoLinguagem tipoLinguagem){
