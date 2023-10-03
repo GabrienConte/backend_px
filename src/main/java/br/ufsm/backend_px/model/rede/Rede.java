@@ -17,6 +17,7 @@ public class Rede {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     @ManyToOne
     @JoinColumn(name = "idUsuarioOrigem")
     private Usuario UsuarioOrigem;

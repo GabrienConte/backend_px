@@ -5,3 +5,4 @@ create table rede (
     FOREIGN KEY (idUsuarioOrigem) REFERENCES usuario (id),
     FOREIGN KEY (idUsuarioDestino) REFERENCES usuario (id)
 );
+
