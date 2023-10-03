@@ -17,5 +17,5 @@ public class Rede {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private Long UsuarioId;
-    private  Long SeguidorId;
+    private Long SeguidorId;
 }
