@@ -35,7 +35,7 @@ public class TipoLinguagemService {
         tipoLinguagem.setLinguagem(linguagem);
         return "LINGUAGEM ATRIBUÍDA COM SUCESSO!!";
     }
-   /* public List<TipoLinguagemDTO> findByTipoLinguagemPorLinguagem(int id){
-        return this.repository.findTipoLinguagemByLinguagem(id);
-    }*/
+   public List<TipoLinguagemDTO> findByTipoLinguagensPorLinguagem(int id){
+        return this.repository.findTipoLinguagensByLinguagem(id);
+
 }
