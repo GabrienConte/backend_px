@@ -5,9 +5,11 @@ import br.ufsm.backend_px.model.linguagem.LinguagemDTO;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+@Repository
 public interface TipoLinguagemRepository  extends JpaRepository<TipoLinguagem, Long> {
     @Query(value = "SELECT l.id  as id, l.nome as nome" +
             " FROM linguagem l where a.idlinguagem =:id", nativeQuery = true)

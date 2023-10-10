@@ -25,7 +25,7 @@ public class AutenticacaoController {
         this.tokenServiceJWT = tokenServiceJWT;
     }
 
-    @PostMapping
+    @PostMapping()
     @ApiOperation(value = "Efetuar login", notes = "Autentica o usuário com base nas credenciais fornecidas e retorna um token JWT.")
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "Login bem-sucedido. O token JWT é retornado."),
