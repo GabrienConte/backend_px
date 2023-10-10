@@ -6,3 +6,7 @@ create table projeto (
    dataPublicacao date,
    resumo varchar
 );
+
+ALTER TABLE projeto ADD column idUsuario integer not null;
+
+ALTER TABLE projeto ADD CONSTRAINT fk_idUsuario FOREIGN KEY (idUsuario) REFERENCES usuario (id);
