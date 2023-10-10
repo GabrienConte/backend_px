@@ -11,8 +11,8 @@ import java.util.List;
 
 @Repository
 public interface TipoLinguagemRepository  extends JpaRepository<TipoLinguagem, Long> {
-    @Query(value = "SELECT l.id  as id, l.nome as nome" +
-            " FROM linguagem l where a.idlinguagem =:id", nativeQuery = true)
+    @Query(value = "SELECT tl.id  as id, tl.nome as nome" +
+            " FROM tipolinguagem tl where tl.id =:id", nativeQuery = true)
     List<LinguagemDTO> findLinguagensByTipoLinguagem(@Param("id") int id);
 
 

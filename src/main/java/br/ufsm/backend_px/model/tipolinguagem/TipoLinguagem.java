@@ -11,8 +11,8 @@ import lombok.Setter;
 
 import java.util.List;
 
-@Entity
-@Table(name = "tipoLinguagem")
+@Entity(name = "TipoLinguagem")
+@Table(name = "tipolinguagem")
 @Getter
 @Setter
 @NoArgsConstructor
@@ -27,5 +27,5 @@ public class TipoLinguagem {
 
     @OneToMany(mappedBy = "tipoLinguagem")
     @JsonIgnore
-    private List<Linguagem> tiposLinguagens;
+    private List<Linguagem> tipolinguagem;
 }

@@ -27,6 +27,6 @@ public class Linguagem {
     private String nome;
 
     @ManyToOne
-    @JoinColumn(name = "idtipoLinguagem")
+    @JoinColumn(name = "idtipolinguagem")
     private TipoLinguagem tipoLinguagem;
 }

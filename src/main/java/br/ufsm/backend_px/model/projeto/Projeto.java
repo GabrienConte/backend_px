@@ -21,6 +21,6 @@ public class Projeto {
     private String nome;
     private String descricao;
     private String link;
-    private Timestamp dataPublicacao;
+    private Timestamp datapublicacao;
     private String resumo;
 }

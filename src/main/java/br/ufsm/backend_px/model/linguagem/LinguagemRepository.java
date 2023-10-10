@@ -13,8 +13,8 @@ public interface LinguagemRepository extends JpaRepository<Linguagem, Long> {
     public Linguagem getById(Long id);
     public Optional<Linguagem> findById(Long id);
 
-    @Query(value = "SELECT l.id  as id, l.nome as nome" +
-            " FROM linguagem l where a.idtipoLinguagem =:id", nativeQuery = true)
+    @Query(value = "SELECT *" +
+            " FROM linguagem l WHERE l.id =:id", nativeQuery = true)
     List<LinguagemDTO> findLinguagensByTipoLinguagem(@Param("id") int id);
 
 }
