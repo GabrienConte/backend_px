@@ -25,9 +25,9 @@ INSERT INTO linguagensProjeto (idLinguagem, idProjeto) VALUES
     (6, 3);
 
 INSERT INTO usuario (nome, login, senha, permissao, descricao, foto, facebook, instagram, linkedin, github) VALUES
-    ('Usuário 1', 'usuario1', 'senha1', 'Normal', 'Descrição do Usuário 1', 'foto1.jpg', 'https://facebook.com/usuario1', 'https://instagram.com/usuario1', 'https://linkedin.com/usuario1', 'https://github.com/usuario1'),
-    ('Usuário 2', 'usuario2', 'senha2', 'Admin', 'Descrição do Usuário 2', 'foto2.jpg', 'https://facebook.com/usuario2', 'https://instagram.com/usuario2', 'https://linkedin.com/usuario2', 'https://github.com/usuario2'),
-    ('Usuário 3', 'usuario3', 'senha3', 'Normal', 'Descrição do Usuário 3', 'foto3.jpg', 'https://facebook.com/usuario3', 'https://instagram.com/usuario3', 'https://linkedin.com/usuario3', 'https://github.com/usuario3');
+    ('Usuário 1', 'usuario1', 'senha1', 'Normal', 'Descrição do Usuário 1', 'https://facebook.com/usuario1', 'https://instagram.com/usuario1', 'https://linkedin.com/usuario1', 'https://github.com/usuario1'),
+    ('Usuário 2', 'usuario2', 'senha2', 'Admin', 'Descrição do Usuário 2', 'https://facebook.com/usuario2', 'https://instagram.com/usuario2', 'https://linkedin.com/usuario2', 'https://github.com/usuario2'),
+    ('Usuário 3', 'usuario3', 'senha3', 'Normal', 'Descrição do Usuário 3', 'https://facebook.com/usuario3', 'https://instagram.com/usuario3', 'https://linkedin.com/usuario3', 'https://github.com/usuario3');
 
 INSERT INTO rede (idUsuarioOrigem, idUsuarioDestino) VALUES
     (1, 2),

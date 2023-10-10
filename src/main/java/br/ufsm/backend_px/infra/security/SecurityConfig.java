@@ -23,7 +23,7 @@ public class SecurityConfig {
 
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception{
-        return http
+        /*return http
                 .csrf(crsf-> crsf.disable())
                 .sessionManagement(sm -> sm.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(auth->
@@ -32,6 +32,10 @@ public class SecurityConfig {
                                 .requestMatchers(HttpMethod.GET,"/aluno").hasAnyAuthority("ROLE_COMMON","ROLE_ADMIN")
                                 .anyRequest().authenticated())
                 .addFilterBefore(this.autenticacaoFilter, UsernamePasswordAuthenticationFilter.class)
+                .build();*/
+        return http
+                .csrf(csrf-> csrf.disable())
+                .sessionManagement(sm-> sm.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .build();
     }
     @Bean

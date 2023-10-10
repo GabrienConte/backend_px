@@ -5,7 +5,6 @@ create table usuario (
  senha varchar not null,
  permissao varchar not null,
  descricao varchar,
- foto varchar,
  facebook varchar,
  instagram varchar,
  linkedin varchar,
