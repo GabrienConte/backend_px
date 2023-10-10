@@ -1,5 +1,6 @@
 package br.ufsm.backend_px.model.projeto;
 
+import br.ufsm.backend_px.model.usuario.Usuario;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -23,4 +24,7 @@ public class Projeto {
     private String link;
     private Timestamp datapublicacao;
     private String resumo;
+    @ManyToOne
+    @JoinColumn(name = "idusuario")
+    private Usuario usuario;
 }
