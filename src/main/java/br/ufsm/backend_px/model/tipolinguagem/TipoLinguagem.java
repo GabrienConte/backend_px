@@ -1,12 +1,15 @@
 package br.ufsm.backend_px.model.tipolinguagem;
 
 import br.ufsm.backend_px.model.linguagem.Linguagem;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
+import java.util.List;
 
 @Entity
 @Table(name = "tipoLinguagem")
@@ -22,7 +25,7 @@ public class TipoLinguagem {
     @NotBlank
     private String nome;
 
-    @ManyToOne
-    @JoinColumn(name = "id")
-    private Linguagem linguagem;
+    @OneToMany(mappedBy = "tipoLinguagem")
+    @JsonIgnore
+    private List<Linguagem> tiposLinguagens;
 }

@@ -26,7 +26,7 @@ public class Linguagem {
     @NotBlank
     private String nome;
 
-    @OneToMany(mappedBy = "tipoLinguagem")
-    @JsonIgnore
-    private List<TipoLinguagem> linguagens;
+    @ManyToOne
+    @JoinColumn(name = "idtipoLinguagem")
+    private TipoLinguagem tipoLinguagem;
 }
