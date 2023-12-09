@@ -23,20 +23,21 @@ public class SecurityConfig {
 
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception{
-        /*return http
+        return http
                 .csrf(crsf-> crsf.disable())
                 .sessionManagement(sm -> sm.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(auth->
                         auth.requestMatchers(HttpMethod.POST,"/login").permitAll()
-                                .requestMatchers(HttpMethod.GET,"/usuario").hasAuthority("ROLE_ADMIN")
-                                .requestMatchers(HttpMethod.GET,"/aluno").hasAnyAuthority("ROLE_COMMON","ROLE_ADMIN")
+                                .requestMatchers(HttpMethod.GET,"/home").permitAll()
+                                .requestMatchers(HttpMethod.GET,"/usuario").hasAuthority("Admin")
+                                .requestMatchers(HttpMethod.GET,"/projeto").hasAnyAuthority("Normal","Admin")
                                 .anyRequest().authenticated())
                 .addFilterBefore(this.autenticacaoFilter, UsernamePasswordAuthenticationFilter.class)
-                .build();*/
-        return http
+                .build();
+        /*return http
                 .csrf(csrf-> csrf.disable())
                 .sessionManagement(sm-> sm.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
-                .build();
+                .build();*/
     }
     @Bean
     public AuthenticationManager authenticationManager(AuthenticationConfiguration configuration)

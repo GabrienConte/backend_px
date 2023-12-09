@@ -1,5 +1,6 @@
 package br.ufsm.backend_px.model.linguagem;
 
+import br.ufsm.backend_px.model.projeto.Projeto;
 import br.ufsm.backend_px.model.tipolinguagem.TipoLinguagem;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
@@ -10,6 +11,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "linguagem")
@@ -29,4 +31,8 @@ public class Linguagem {
     @ManyToOne
     @JoinColumn(name = "idtipolinguagem")
     private TipoLinguagem tipoLinguagem;
+
+    @ManyToMany(mappedBy = "linguagens")
+    @JsonIgnore
+    Set<Projeto> projetos;
 }

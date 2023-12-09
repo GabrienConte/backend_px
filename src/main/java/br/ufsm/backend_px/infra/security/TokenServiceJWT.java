@@ -17,10 +17,11 @@ public class TokenServiceJWT {
     public String gerarToken(User user){
         try{
             Algorithm algorithm = Algorithm.HMAC256("POO2");
+            System.out.println(user.getAuthorities().stream().toList().get(0).toString());
             return JWT.create()
                     .withIssuer("API Px")
                     .withSubject(user.getUsername())
-                    .withClaim("ROLE", user.getAuthorities().stream().toList().get(0).toString())
+                    .withClaim("permissao", user.getAuthorities().stream().toList().get(0).toString())
                     .withExpiresAt(dataExpiracao())
                     .sign(algorithm);
         }catch (JWTCreationException e){

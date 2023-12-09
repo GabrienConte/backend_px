@@ -6,4 +6,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface ProjetoRepository extends JpaRepository<Projeto, Long> {
     public Projeto findByNome(String nome);
+
+    //long countProjetoByUsuario(String usuario);
+
 }

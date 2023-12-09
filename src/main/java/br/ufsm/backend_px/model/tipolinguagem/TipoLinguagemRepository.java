@@ -15,5 +15,4 @@ public interface TipoLinguagemRepository  extends JpaRepository<TipoLinguagem, L
             " FROM tipolinguagem tl where tl.id =:id", nativeQuery = true)
     List<LinguagemDTO> findLinguagensByTipoLinguagem(@Param("id") int id);
 
-
 }
