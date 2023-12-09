@@ -29,8 +29,17 @@ public class SecurityConfig {
                 .authorizeHttpRequests(auth->
                         auth.requestMatchers(HttpMethod.POST,"/login").permitAll()
                                 .requestMatchers(HttpMethod.GET,"/home").permitAll()
+                                .requestMatchers(HttpMethod.GET,"/projeto").permitAll()
+
+                                .requestMatchers(HttpMethod.GET,"/linguagem").hasAuthority("Admin")
+                                .requestMatchers(HttpMethod.POST,"/linguagem").hasAuthority("Admin")
+                                .requestMatchers(HttpMethod.GET,"/tipoLinguagem").hasAuthority("Admin")
+                                .requestMatchers(HttpMethod.POST,"/tipoLinguagem").hasAuthority("Admin")
                                 .requestMatchers(HttpMethod.GET,"/usuario").hasAuthority("Admin")
-                                .requestMatchers(HttpMethod.GET,"/projeto").hasAnyAuthority("Normal","Admin")
+                                .requestMatchers(HttpMethod.POST,"/usuario").hasAuthority("Admin")
+
+                                .requestMatchers(HttpMethod.GET,"/minharede").hasAnyAuthority("Normal","Admin")
+                                .requestMatchers(HttpMethod.POST,"/projeto").hasAnyAuthority("Normal","Admin")
                                 .anyRequest().authenticated())
                 .addFilterBefore(this.autenticacaoFilter, UsernamePasswordAuthenticationFilter.class)
                 .build();
