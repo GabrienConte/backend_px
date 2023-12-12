@@ -1,7 +1,7 @@
 version: '3'
 # docker-compose -p "backendpx" up -d
 services:
-  backend_px:
+  backend-px:
     build:
       context: .
       dockerfile: Dockerfile
