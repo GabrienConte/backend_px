@@ -19,9 +19,10 @@ public class Rede {
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "idUsuarioOrigem")
+    @JoinColumn(name = "idusuarioorigem")
     private Usuario UsuarioOrigem;
     @ManyToOne
-    @JoinColumn(name = "idUsuarioDestino")
+    @JoinColumn(name = "idusuariod" +
+            "estino")
     private Usuario UsuarioDestino;
 }
