@@ -23,6 +23,12 @@ public class UsuarioService {
         Usuario usuario = this.repository.getReferenceById(id);
         return new DadosUsuario(usuario);
     }
+
+    public DadosUsuario findUsuarioByUsername(String username){
+        Usuario usuario = this.repository.findByNome(username);
+        return new DadosUsuario(usuario);
+    }
+
     public List<DadosUsuario> findAllUsuarios(){
         return this.repository.findAll().stream().map(DadosUsuario::new).toList();
     }

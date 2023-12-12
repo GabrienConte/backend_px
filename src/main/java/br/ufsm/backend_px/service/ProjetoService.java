@@ -17,4 +17,6 @@ public class ProjetoService {
     public List<Projeto> listar() {
         return this.repository.findAll();
     }
+    public List<Projeto> obterProjetosDosSeguidores(Long usuarioId) { return repository.findProjetosDosSeguidores(usuarioId);
+    }
 }
