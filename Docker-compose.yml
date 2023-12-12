@@ -1,5 +1,5 @@
 version: '3'
-# docker-compose -p "avaliarprojetos" up -d
+# docker-compose -p "backendpx" up -d
 services:
   backend_px:
     build:
