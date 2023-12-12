@@ -1,5 +1,6 @@
 package br.ufsm.backend_px.model.projeto;
 
+import br.ufsm.backend_px.model.usuario.Usuario;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
@@ -11,10 +12,8 @@ import java.util.List;
 public interface ProjetoRepository extends JpaRepository<Projeto, Long> {
     public Projeto findByNome(String nome);
 
-    @Query(value = "SELECT DISTINCT p FROM projeto AS p JOIN usuario as u  ON p.idusuario = u.id " +
-                   "JOIN rede as r ON p.idusuario = r.idusuarioorigem   " +
-                   "WHERE r.idusuarioorigem = :usuarioId", nativeQuery = true)
-    List<Projeto> findProjetosDosSeguidores(@Param("usuarioId") Long usuarioId);
+    @Query("SELECT p FROM Projeto p JOIN p.usuario u WHERE u.id IN (SELECT r.UsuarioDestino.id FROM Rede r WHERE r.UsuarioOrigem.id = ?1)")
+    List<Projeto> findProjetosSeguidosByUsuarioId(Long usuarioId);
 
     //long countProjetoByUsuario(String usuario);
 

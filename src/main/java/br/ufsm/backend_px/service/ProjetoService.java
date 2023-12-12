@@ -1,6 +1,7 @@
 package br.ufsm.backend_px.service;
 import br.ufsm.backend_px.model.projeto.Projeto;
 import br.ufsm.backend_px.model.projeto.ProjetoRepository;
+import br.ufsm.backend_px.model.usuario.Usuario;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -20,6 +21,6 @@ public class ProjetoService {
     public List<Projeto> listar() {
         return this.repository.findAll();
     }
-    public List<Projeto> obterProjetosDosSeguidores(Long usuarioId) { return repository.findProjetosDosSeguidores(usuarioId);
+    public List<Projeto> obterProjetosDosSeguidores(Long usuarioID) { return repository.findProjetosSeguidosByUsuarioId(usuarioID);
     }
 }

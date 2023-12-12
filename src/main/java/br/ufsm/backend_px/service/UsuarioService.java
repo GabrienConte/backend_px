@@ -3,6 +3,9 @@ package br.ufsm.backend_px.service;
 import br.ufsm.backend_px.model.usuario.Usuario;
 import br.ufsm.backend_px.model.usuario.UsuarioRepository;
 import br.ufsm.backend_px.model.usuario.DadosUsuario;
+import org.hibernate.usertype.UserTypeSupport;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -26,6 +29,12 @@ public class UsuarioService {
 
     public Usuario findUsuarioByUsername(String username){
         Usuario usuario = this.repository.findByNome(username);
+        return usuario;
+    }
+
+    public Usuario getUsuarioAutenticado(){
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        Usuario usuario = this.repository.findByLogin(authentication.getName());
         return usuario;
     }
 
