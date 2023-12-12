@@ -14,6 +14,9 @@ public class ProjetoService {
     public void cadastrar(Projeto projeto) {
         this.repository.save(projeto);
     }
+    public Projeto findById(Long id) {
+        return this.repository.findById(id).get();
+    }
     public List<Projeto> listar() {
         return this.repository.findAll();
     }

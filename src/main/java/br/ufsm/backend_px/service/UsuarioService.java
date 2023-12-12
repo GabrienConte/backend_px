@@ -19,14 +19,14 @@ public class UsuarioService {
         usuario.setSenha(new BCryptPasswordEncoder().encode(usuario.getSenha()));
         this.repository.save(usuario);
     }
-    public DadosUsuario findUsuario(Long id){
+    public Usuario findUsuario(Long id){
         Usuario usuario = this.repository.getReferenceById(id);
-        return new DadosUsuario(usuario);
+        return usuario;
     }
 
-    public DadosUsuario findUsuarioByUsername(String username){
+    public Usuario findUsuarioByUsername(String username){
         Usuario usuario = this.repository.findByNome(username);
-        return new DadosUsuario(usuario);
+        return usuario;
     }
 
     public List<DadosUsuario> findAllUsuarios(){

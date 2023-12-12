@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.sql.Timestamp;
+import java.util.ArrayList;
 import java.util.Set;
 
 @Entity(name = "Projeto")
@@ -35,4 +36,12 @@ public class Projeto {
             joinColumns = @JoinColumn(name = "idprojeto"),
             inverseJoinColumns = @JoinColumn(name = "idlinguagem"))
     Set<Linguagem> linguagens;
+
+    public Projeto(String nome, String descricao, String link, Timestamp datapublicacao, String resumo) {
+        this.nome = nome;
+        this.descricao = descricao;
+        this.link = link;
+        this.datapublicacao = datapublicacao;
+        this.resumo = resumo;
+    }
 }

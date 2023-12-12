@@ -35,7 +35,7 @@ public class UsuarioController {
 
     @GetMapping("/{id}")
     @ApiOperation(value = "Encontrar usuário por ID", notes = "Retorna um usuário com base no ID fornecido.")
-    public DadosUsuario findById(@PathVariable Long id) {
+    public Usuario findById(@PathVariable Long id) {
         return this.service.findUsuario(id);
     }
 

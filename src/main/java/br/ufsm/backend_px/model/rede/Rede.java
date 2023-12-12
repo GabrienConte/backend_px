@@ -23,5 +23,5 @@ public class Rede {
     private Usuario UsuarioOrigem;
     @ManyToOne
     @JoinColumn(name = "idUsuarioDestino")
-    private Usuario UsuarioSeguidor;
+    private Usuario UsuarioDestino;
 }

@@ -11,7 +11,9 @@ import java.util.List;
 public interface ProjetoRepository extends JpaRepository<Projeto, Long> {
     public Projeto findByNome(String nome);
 
-    @Query("SELECT DISTINCT p FROM Projeto p JOIN p.usuario u JOIN u.seguidores s WHERE s.id = :usuarioId")
+    @Query(value = "SELECT DISTINCT p FROM projeto AS p JOIN usuario as u  ON p.idusuario = u.id " +
+                   "JOIN rede as r ON p.idusuario = r.idusuarioorigem   " +
+                   "WHERE r.idusuarioorigem = :usuarioId", nativeQuery = true)
     List<Projeto> findProjetosDosSeguidores(@Param("usuarioId") Long usuarioId);
 
     //long countProjetoByUsuario(String usuario);
