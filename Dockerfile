@@ -1,7 +1,7 @@
 FROM openjdk:17
 
-ADD target/classes backendpx
+ADD target/BackendPx.jar BackendPx.jar
 
-ENTRYPOINT ["java", "-cp" , "target/classes", "BackendPxApplication.class"]
+ENTRYPOINT ["java", "-jar", "BackendPx.jar"]
 
 EXPOSE 8080
